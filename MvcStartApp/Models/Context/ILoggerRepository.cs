@@ -7,6 +7,6 @@ namespace MvcStartApp.Models.Context
     public interface ILoggerRepository
     {
         public Task AddLogData(HttpContext context);
-
+        public Task<Request[]> GetLogData();
     }
 }

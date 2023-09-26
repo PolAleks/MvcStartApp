@@ -20,9 +20,8 @@ namespace MvcStartApp.Models.Context
 
         public async Task AddLogData(HttpContext context)
         {
-            string url = GetUrl(context);
-            Request request = new(url);
-            
+            Request request = GetRequest(context);
+
             EntityEntry entry = _context.Entry(request);
             if (entry.State == EntityState.Detached)
             {
@@ -31,9 +30,21 @@ namespace MvcStartApp.Models.Context
             await _context.SaveChangesAsync();
         }
 
-        private static string GetUrl(HttpContext context)
+        public async Task<Request[]> GetLogData()
         {
-            return String.Concat("http://", context.Request.Host.Value, context.Request.Path);
+            return await _context.Requests.ToArrayAsync();
+        }
+
+        private static Request GetRequest(HttpContext context)
+        {
+            Request request = new()
+            {
+                Id = Guid.NewGuid(),
+                Date = DateTime.Now,
+                Url = String.Concat("http://", context.Request.Host.Value, context.Request.Path)
+            };
+
+            return request;
         }
     }
 }
