@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcStartApp", "MvcStartApp\MvcStartApp.csproj", "{49331D93-AFB0-49CA-8CCF-870C5358C816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcStartApp.Web", "MvcStartApp\MvcStartApp.Web.csproj", "{49331D93-AFB0-49CA-8CCF-870C5358C816}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcStartApp.DAL", "MvcStartApp.DAL\MvcStartApp.DAL.csproj", "{A1FC6D98-6E85-4C7C-AB55-63B95796853B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcStartApp.BLL", "MvcStartApp.BLL\MvcStartApp.BLL.csproj", "{ED528144-90BA-4287-95CF-14E9D7BDAB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcStartApp.DAL.Tests", "MvcStartApp.BLL.Tests\MvcStartApp.DAL.Tests.csproj", "{9BCE04E0-5EF9-40F6-A28C-BE1F8B81E2BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcStartApp.Web.IntegrationTests", "MvcStartApp.Web.IntegrationTests\MvcStartApp.Web.IntegrationTests.csproj", "{E05C85D0-A382-419D-BDBD-D94A3D776BC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{49331D93-AFB0-49CA-8CCF-870C5358C816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49331D93-AFB0-49CA-8CCF-870C5358C816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49331D93-AFB0-49CA-8CCF-870C5358C816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FC6D98-6E85-4C7C-AB55-63B95796853B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FC6D98-6E85-4C7C-AB55-63B95796853B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FC6D98-6E85-4C7C-AB55-63B95796853B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FC6D98-6E85-4C7C-AB55-63B95796853B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED528144-90BA-4287-95CF-14E9D7BDAB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED528144-90BA-4287-95CF-14E9D7BDAB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED528144-90BA-4287-95CF-14E9D7BDAB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED528144-90BA-4287-95CF-14E9D7BDAB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCE04E0-5EF9-40F6-A28C-BE1F8B81E2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCE04E0-5EF9-40F6-A28C-BE1F8B81E2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCE04E0-5EF9-40F6-A28C-BE1F8B81E2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCE04E0-5EF9-40F6-A28C-BE1F8B81E2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E05C85D0-A382-419D-BDBD-D94A3D776BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E05C85D0-A382-419D-BDBD-D94A3D776BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E05C85D0-A382-419D-BDBD-D94A3D776BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E05C85D0-A382-419D-BDBD-D94A3D776BC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

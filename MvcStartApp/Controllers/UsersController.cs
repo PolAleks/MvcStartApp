@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MvcStartApp.Models.Context;
 using MvcStartApp.Models.Db;
 using System.Threading.Tasks;
 using System;
+using MvcStartApp.DAL.Interfaces;
 
 namespace MvcStartApp.Controllers
 {

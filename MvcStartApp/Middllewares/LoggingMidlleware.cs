@@ -1,23 +1,26 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿    using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-using MvcStartApp.Models.Context;
+using MvcStartApp.DAL.Interfaces;
+using MvcStartApp.BLL.Services;
 
 namespace MvcStartApp.Middlewares
 {
     public class LoggingMidlleware
     {
         private readonly RequestDelegate _next;
-        private readonly ILoggerRepository _logger;
+        private readonly IRequestServices _requestServices;
 
         /// <summary>
         ///  Middleware-компонент должен иметь конструктор, принимающий RequestDelegate
         /// </summary>
-        public LoggingMidlleware(RequestDelegate next, ILoggerRepository logger)
+        public LoggingMidlleware(
+            RequestDelegate next, 
+            IRequestServices requestServices)
         {
             _next = next;
-            _logger = logger;
+            _requestServices = requestServices;
         }
 
         /// <summary>
@@ -25,8 +28,8 @@ namespace MvcStartApp.Middlewares
         /// </summary>
         public async Task InvokeAsync(HttpContext context)
         {
-            // Запись лога в базу данных
-            await _logger.AddLogData(context);
+            // Запись лога в базу данных при помощи сервиса вынесенного в слой BLL
+            await _requestServices.AddRequestData(context);
 
             LogConsole(context);
             await LogFile(context);

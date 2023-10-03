@@ -5,6 +5,8 @@ using System.IO;
 using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using MvcStartApp.DAL.Interfaces;
+using System.Collections.Generic;
 
 namespace MvcStartApp.Models.Context
 {
@@ -18,7 +20,7 @@ namespace MvcStartApp.Models.Context
             _request = context.Requests;
         }
 
-        public async Task AddLogData(HttpContext context)
+        public async Task<bool> AddLogData(HttpContext context)
         {
             Request request = GetRequest(context);
 
@@ -27,12 +29,17 @@ namespace MvcStartApp.Models.Context
             {
                 await _request.AddAsync(request);
             }
+            else
+            {
+                return false;
+            }
             await _context.SaveChangesAsync();
+            return true;
         }
 
-        public async Task<Request[]> GetLogData()
+        public async Task<List<Request>> GetLogData()
         {
-            return await _context.Requests.ToArrayAsync();
+            return await _context.Requests.ToListAsync();
         }
 
         private static Request GetRequest(HttpContext context)

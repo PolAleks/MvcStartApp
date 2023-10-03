@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MvcStartApp.DAL.Interfaces;
 using MvcStartApp.Models.Db;
 using System;
 using System.Threading.Tasks;

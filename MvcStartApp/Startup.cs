@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MvcStartApp.BLL.Services;
+using MvcStartApp.DAL.Interfaces;
 using MvcStartApp.Middlewares;
 using MvcStartApp.Models.Context;
 using System;
@@ -29,6 +31,7 @@ namespace MvcStartApp
             // регистрация сервиса репозитория для взаимодействия с базой данных
             services.AddSingleton<IBlogRepository, BlogRepository>();
             services.AddSingleton<ILoggerRepository, LoggerRepository>();
+            services.AddSingleton<IRequestServices, RequestServices>();
 
             // Считываем строку поключения из файла настроек.
             string connection = Configuration.GetConnectionString("DefaultConnection");

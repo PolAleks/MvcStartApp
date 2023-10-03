@@ -1,7 +1,7 @@
 ﻿using MvcStartApp.Models.Db;
 using System.Threading.Tasks;
 
-namespace MvcStartApp.Models.Context
+namespace MvcStartApp.DAL.Interfaces
 {
     public interface IBlogRepository
     {
